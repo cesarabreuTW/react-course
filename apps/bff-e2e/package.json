@@ -1,0 +1,26 @@
+{
+  "name": "@react-course/bff-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@react-course/bff"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/bff-e2e/jest.config.ts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@react-course/bff:build",
+          "@react-course/bff:serve"
+        ]
+      }
+    }
+  }
+}

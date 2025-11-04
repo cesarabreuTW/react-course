@@ -5,6 +5,15 @@
   "references": [
     {
       "path": "./apps/layout"
+    },
+    {
+      "path": "./libs/design-system"
+    },
+    {
+      "path": "./apps/bff-e2e"
+    },
+    {
+      "path": "./apps/bff"
     }
   ]
 }
