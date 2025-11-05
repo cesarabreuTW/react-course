@@ -1,0 +1,15 @@
+/*
+ * Replace this with your own classes
+ *
+ * e.g.
+ * .container {
+ * }
+*/
+.button{
+    background-color: #007bff;
+    color: #fff;
+    border: solid 1px #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
