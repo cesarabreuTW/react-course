@@ -13,14 +13,12 @@ describe('App', () => {
     expect(baseElement).toBeTruthy();
   });
 
-  it('should have a greeting as the title', () => {
-    const { getAllByText } = render(
+  it('should have a modal button', () => {
+    const { getByText } = render(
       <BrowserRouter>
         <App />
       </BrowserRouter>
     );
-    expect(
-      getAllByText(new RegExp('Welcome @react-course/layout', 'gi')).length > 0
-    ).toBeTruthy();
+    expect(getByText('show modal')).toBeTruthy();
   });
 });
