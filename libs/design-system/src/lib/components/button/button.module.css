@@ -5,11 +5,22 @@
  * .container {
  * }
 */
-.button{
-    background-color: #007bff;
-    color: #fff;
-    border: solid 1px #007bff;
+
+.container {
+    background-color: red;
+    color: white;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+    &:hover {
+        background-color: darkred;
+    }
 }
