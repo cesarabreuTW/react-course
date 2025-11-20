@@ -14,12 +14,10 @@ async function fetchData(url: string) {
 
 function App() {
   return (
-    <>
-      <ResorceLoaderRender
-        getData={() => fetchData('/api/books')}
-        render={(books) => <Books books={books} />}
-      />
-    </>
+    <ResorceLoaderRender
+      getData={() => fetchData('/api/books')}
+      render={(books) => <Books books={books} />}
+    />
   );
 }
 
