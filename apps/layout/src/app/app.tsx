@@ -1,26 +1,26 @@
-// import { Button, Modal, SplitScreenView } from "@react-course/design-system";
 // This was achieved by adding the following to the package.json:
 // "exports": {
 //   "./styles": "./dist/index.css"
 // }
-import { ResourceLoader } from '@react-course/design-system';
+import { ResorceLoaderRender } from '@react-course/design-system';
 import '@react-course/design-system/styles';
-import { Authors } from './components/authors/authors';
+import axios from 'axios';
 import { Books } from './components/books/books';
 
+async function fetchData(url: string) {
+  const response = await axios.get('/api/books');
+  return response.data;
+}
 
 function App() {
   return (
     <>
-      <ResourceLoader resourceUrl="/api/authors" resourceName="authors">
-        <Authors />
-      </ResourceLoader>
-      <h1>Books</h1>
-      <ResourceLoader resourceUrl="/api/books" resourceName="books">
-        <Books />
-      </ResourceLoader>
+      <ResorceLoaderRender
+        getData={() => fetchData('/api/books')}
+        render={(books) => <Books books={books} />}
+      />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
