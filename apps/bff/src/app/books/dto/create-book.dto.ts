@@ -1,6 +1,9 @@
-import { IsNumber, IsString, IsUrl } from 'class-validator';
+import { IsNumber, IsString, IsUrl, IsUUID } from 'class-validator';
+import { Book } from '../interfaces/book';
 
-export class CreateBookDto {
+export class CreateBookDto implements Book {
+  @IsUUID()
+  readonly id!: string;
   @IsString()
   readonly title!: string;
   @IsNumber()

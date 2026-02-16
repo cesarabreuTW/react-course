@@ -5,6 +5,7 @@ import styles from './books.module.css';
 
 import { logBookData } from '../../hoc/books';
 
+// This is the high-order component that wraps the Book component. The only thing it does is to log the book data
 const HocBook = logBookData(Book);
 
 export function Books({ books }: { books?: Record<string, any>[] }) {
@@ -16,6 +17,8 @@ export function Books({ books }: { books?: Record<string, any>[] }) {
     <div className={styles['wrapper']}>
       {books.map((book) => (
         <div key={book.id} className={styles['container']}>
+          {/* Its better to use a particular id of item insted of its array's index. 
+          This is because React will render the whole list specially when items are added or removed.*/}
           <h2>{book.title}</h2>
           <Button
             text="View Details"
