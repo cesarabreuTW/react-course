@@ -1,6 +1,11 @@
 import { Button, Modal } from '@react-course/design-system';
 import { useState } from 'react';
+import { Book } from './book/book';
 import styles from './books.module.css';
+
+import { logBookData } from '../../hoc/books';
+
+const HocBook = logBookData(Book);
 
 export function Books({ books }: { books?: Record<string, any>[] }) {
   // const [showModal, setShowModal] = useState(false);
@@ -30,18 +35,7 @@ export function Books({ books }: { books?: Record<string, any>[] }) {
             shouldDisplay={selectedBookId === book.id}
             onClose={() => setSelectedBookId(null)}
           >
-            <section style={{ display: 'flex', gap: '10px' }}>
-              <section id="cover">
-                <img src={book.cover} alt={book.title} />
-              </section>
-              <section id="details">
-                <h2>{book.title}</h2>
-                <h3>Released in {book.year}</h3>
-                <h3>Description</h3>
-                <p>{book.description}</p>
-                <p>This book has {book.pages} pages.</p>
-              </section>
-            </section>
+            <HocBook book={book} />
             <Button text="Close" onClick={() => setSelectedBookId(null)} />
           </Modal>
         </div>
