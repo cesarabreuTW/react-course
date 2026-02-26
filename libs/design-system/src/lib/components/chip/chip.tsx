@@ -1,10 +1,15 @@
 import styles from './chip.module.css';
 
-export function Chip() {
+export interface ChipProps {
+  label: string;
+  color?: 'blue' | 'green' | 'red' | 'purple';
+}
+
+export function Chip({ label, color = 'blue' }: ChipProps) {
   return (
-    <div className={styles['container']}>
-      <h1>Welcome to Chip!</h1>
-    </div>
+    <span className={styles['container']}>
+      {label}
+    </span>
   );
 }
 

@@ -1,3 +1,5 @@
+import { Chip } from '@react-course/design-system';
+
 export function Book({ book }: { book: Record<string, any> }) {
   return (
     <section style={{ display: 'flex', gap: '10px' }}>
@@ -10,6 +12,7 @@ export function Book({ book }: { book: Record<string, any> }) {
         <h3>Description</h3>
         <p>{book.description}</p>
         <p>This book has {book.pages} pages.</p>
+        <Chip label={'Pepito has a car race'} />
       </section>
     </section>
   );
