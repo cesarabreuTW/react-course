@@ -1,5 +1,5 @@
 /// <reference types='vitest' />
-import tailwind from '@tailwindcss/vite';
+import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import * as path from 'path';
 import { defineConfig } from 'vite';
@@ -14,7 +14,7 @@ export default defineConfig(() => ({
       entryRoot: 'src',
       tsconfigPath: path.join(__dirname, 'tsconfig.lib.json'),
     }),
-    tailwind(),
+    tailwindcss(),
   ],
   // Uncomment this if you are using workers.
   // worker: {
