@@ -2,9 +2,7 @@
 // "exports": {
 //   "./styles": "./dist/index.css"
 // }
-import { Header } from "@emx-mantto/nebula-react";
-import "@emx-mantto/nebula-react/styles.css";
-import { ResorceLoaderRender } from '@react-course/design-system';
+import { Header, ResorceLoaderRender } from '@react-course/design-system';
 import '@react-course/design-system/styles';
 import axios from 'axios';
 import { Books } from './components/books/books';
@@ -15,16 +13,26 @@ async function fetchData(url: string) {
 }
 
 function App() {
+  const menuItems = [
+    { title: 'Home', url: '/' },
+    { title: 'Books', url: '/books' },
+    { title: 'Authors', url: '/authors' },
+    { title: 'About', url: '/about' },
+  ];
+
+  const actionButtons = [
+    { text: 'Sign In', click: () => alert('Sign In clicked') },
+    { text: 'Get Started', click: () => alert('Get Started clicked') },
+  ];
+
   return (
-<>
-<Header user={{
-    name: 'Jane Doe'
-  }} />
-<ResorceLoaderRender
-  getData={() => fetchData('/api/books')}
-  render={(books) => <Books books={books} />}
-/>
-</>
+    <>
+      <Header menu={menuItems} actionButtons={actionButtons} />
+      <ResorceLoaderRender
+        getData={() => fetchData('/api/books')}
+        render={(books) => <Books books={books} />}
+      />
+    </>
   );
 }
 
