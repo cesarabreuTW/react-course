@@ -1,9 +1,36 @@
 @reference "../../../styles/globals.css";
 
 .container {
-    @apply px-3 py-1 bg-blue-500 text-white rounded-full text-sm font-medium inline-block;
+    @apply px-3 py-1 text-white rounded-full text-sm font-medium inline-block transition-colors duration-200 ease-in-out;
+}
+.container-blue {
+    @apply bg-blue-500;
 }
 
-.container:hover {
-    @apply bg-blue-600 transition-colors duration-200 ease-in-out;
+.container-blue:hover {
+    @apply bg-blue-600;
+}
+
+.container-green {
+    @apply bg-green-500;
+}
+
+.container-green:hover {
+    @apply bg-green-600;
+}
+
+.container-red {
+    @apply bg-red-500;
+}
+
+.container-red:hover {
+    @apply bg-red-600;
+}
+
+.container-purple {
+    @apply bg-purple-500;
+}
+
+.container-purple:hover {
+    @apply bg-purple-600;
 }

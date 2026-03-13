@@ -6,8 +6,10 @@ export interface ChipProps {
 }
 
 export function Chip({ label, color = 'blue' }: ChipProps) {
+  const baseClass = styles.container;
+  const colorClass = styles[`container-${color}`];
   return (
-    <span className={styles['container']}>
+    <span className={`${baseClass} ${colorClass}`}>
       {label}
     </span>
   );
