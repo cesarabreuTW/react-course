@@ -1,27 +1,8 @@
-/*
- * Replace this with your own classes
- *
- * e.g.
- * .container {
- * }
-*/
+@reference "../../../styles/globals.css";
 
 .container {
-    background-color: red;
-    width: auto;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 10px;
-    transition: background-color 0.3s ease;
-    &:hover {
-        background-color: darkred;
+    @apply px-5 py-2 bg-red-600 text-white rounded-md text-base font-bold text-center no-underline inline-block m-2.5 cursor-pointer transition-colors duration-300 ease-in-out;
     }
+.container:hover {
+    @apply bg-red-700;
 }
