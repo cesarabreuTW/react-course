@@ -1,8 +1,9 @@
 import { Chip } from '@react-course/design-system';
+import styles from './book.module.css';
 
 export function Book({ book }: { book: Record<string, any> }) {
   return (
-    <section style={{ display: 'flex', gap: '10px' }}>
+    <section className={styles['container']}>
       <section id="cover">
         <img src={book.cover} alt={book.title} />
       </section>
@@ -12,7 +13,7 @@ export function Book({ book }: { book: Record<string, any> }) {
         <h3>Description</h3>
         <p>{book.description}</p>
         <p>This book has {book.pages} pages.</p>
-        <Chip label={'Pepito has a car race'} />
+        <Chip label={'Pepito has a car race'} color='purple' />
       </section>
     </section>
   );
