@@ -5,7 +5,9 @@
   "scripts": {
     "dev:layout": "nx serve layout",
     "dev:bff": "nx serve bff",
-    "build:lib": "nx build design-system"
+    "build:lib": "nx build design-system",
+    "test:lib": "nx test design-system",
+    "test:layout": "nx test layout"
   },
   "private": true,
   "dependencies": {
