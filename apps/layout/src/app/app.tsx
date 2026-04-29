@@ -3,14 +3,22 @@
 //   "./styles": "./dist/index.css"
 // }
 import { Header, ResorceLoaderRender } from '@react-course/design-system';
+// @ts-expect-error because we are importing css from a package, we need to ignore the typescript error
 import '@react-course/design-system/styles';
 import axios from 'axios';
+// import { Authors } from './components/authors/authors';
 import { Books } from './components/books/books';
+import Uncontrolled from './forms/uncontrolled/uncontrolled';
 
 async function fetchData(url: string) {
   const response = await axios.get(url);
   return response.data;
 }
+
+//TODO: use the custom hook useResource for fetching data
+
+const fetchBooks = () => fetchData('/api/books');
+// const fetchAuthors = () => fetchData('/api/authors');
 
 function App() {
   const menuItems = [
@@ -29,9 +37,10 @@ function App() {
     <>
       <Header menu={menuItems} actionButtons={actionButtons} />
       <ResorceLoaderRender
-        getData={() => fetchData('/api/books')}
+        getData={() => fetchBooks()}
         render={(books) => <Books books={books} />}
       />
+      <Uncontrolled onSubmit={(data)=> console.log({data})} />
     </>
   );
 }
